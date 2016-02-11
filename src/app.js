@@ -80,6 +80,7 @@ var app = {
   // This is the main function.
   render: function () { 
     s('explanation').hide();
+    s('loading').show();
 
     app.load(function() {
       s('output').set('');
@@ -90,6 +91,7 @@ var app = {
       });
 
       // Let's show that app.
+      s('loading').hide();
       s('app').show();
     });
   },
