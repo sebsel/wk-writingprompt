@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ol, ul 
+  list-style: none
+
+blockquote, q 
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after 
+  content: ''
+  content: none
+
+table 
+  border-collapse: collapse
+  border-spacing: 0
+
+
+
+$ubuntu: 'Ubuntu', Helvetica, Arial, sans-serif
+$bodybg: rgb(238, 238, 238)
+$mainbg: rgb(218, 218, 218)
+$text: rgb(60,60,60)
+$darkgrey: rgb(153, 153, 153)
+$apprentice: rgb(221, 0, 147)
+=container()
+  max-width: 500px
+  margin: 0 auto
+=clearfix
+  &:after
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+
+
+/* AND NOW MY OWN */
+
+body
+  font-family: $ubuntu
+  background-color: $bodybg
+
+main
+  +container
+  color: $text
+  background-color: $mainbg
+  padding: 10px
+  font-size: 16px
+  line-height: 22px
+
+#explanation
+  ol
+    list-style-type: decimal;
+    margin-left: 30px
+
+h1
+  +container
+  color: $text
+  font-size: 2em
+  font-weight: bold
+  margin-top: 50px
+  margin-bottom: 20px
+
+p
+  margin: 10px 0
+
+a
+  color: $apprentice
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+strong
+  font-weight: bold
+
+.copy
+  +container
+  color: $text
+  margin-top: 20px
+  font-size: 0.7em
+
+input
+  font-family: $ubuntu
+  font-size: 0.8em
+
+button,
+input[type='button'],
+input[type='submit']
+  color: $bodybg
+  background-color: $darkgrey
+  border: none
+  border-radius: 4px
+
+input[type='text']
+  color: $text
+  border: none
+  background-color: $bodybg
+
+#startagain 
+  font-size: 1.2em
+  background-color: $apprentice
+
+#fetch input[type='submit']
+  background-color: $apprentice
+
+#forgetme
+  float: right
+
+#word
+  display: none
+
+#app
+  display: none
+  
+  .word
+    text-align: center
+    border-radius: 8px
+    border: solid $darkgrey 3px
+    box-sizing: border-box
+    margin: 10px
+    padding: 3px
+    width: 480px
+    display: inline-block
+
+    .level
+      background-color: $darkgrey
+      color: $bodybg
+      margin-bottom: 10px
+      font-size: 0.8em
+      padding: 2px
+
+    .japanese
+      float: left
+      padding: 10px
+      width: 50%
+      box-sizing: border-box
+
+      .kanji
+        font-size: 2em
+        margin: 10px 0
+
+      .kana
+
+    .meaning
+      float: right
+      width: 50%
+      margin-top: 20px
+      margin-bottom: 5px
+      vertical-align: center
